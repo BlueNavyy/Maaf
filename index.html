@@ -104,24 +104,21 @@
     </div>
 
     <script>
-        const audio = document.getElementById('music');
-        const btn = document.getElementById('playPauseBtn');
+    const music = document.getElementById('music');
+    const toggleBtn = document.getElementById('toggleBtn');
 
-        btn.addEventListener('click', () => {
-            if (audio.paused) {
-                audio.play();
-                btn.textContent = 'Pause Musik';
-            } else {
-                audio.pause();
-                btn.textContent = 'Play Musik';
-            }
-        });
-
-        // Ganti tombol balik ke "Play" kalo musik selesai
-        audio.addEventListener('ended', () => {
-            btn.textContent = 'Play Musik';
-        });
-    </script>
+    toggleBtn.addEventListener('click', () => {
+        if (music.paused) {
+            music.play();
+            toggleBtn.textContent = 'Pause Musik';
+            toggleBtn.classList.add('playing');
+        } else {
+            music.pause();
+            toggleBtn.textContent = 'Play Musik';
+            toggleBtn.classList.remove('playing');
+        }
+    });
+</script>
 
 </body>
 </html>
