@@ -37,4 +37,6 @@ button {
 
 button:hover {
     background-color: #2980b9;
+    .playing {
+    background-color: #388e3c;
 }
