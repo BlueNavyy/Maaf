@@ -24,12 +24,8 @@
         }
         .audio-container {
             display: flex;
-            align-items: center;
             justify-content: center;
             margin: 20px 0;
-        }
-        audio {
-            margin-right: 10px;
         }
         .play-btn {
             background-color: #d32f2f;
@@ -43,16 +39,19 @@
         .play-btn:hover {
             background-color: #c2185b;
         }
+        audio {
+            display: none; /* sembunyikan player */
+        }
     </style>
 </head>
 <body>
 
-    <!-- Audio with Play Button at the top -->
+    <!-- Audio + Toggle Button -->
     <div class="audio-container">
-        <audio id="music" controls>
+        <audio id="music">
             <source src="Raissa-Anggiani-Jika-Nanti.mp3" type="audio/mpeg">
         </audio>
-        <button class="play-btn" onclick="document.getElementById('music').play()">Play Musik</button>
+        <button class="play-btn" id="playPauseBtn">Play Musik</button>
     </div>
 
     <h1>PROPOSAL PERMOHONAN MAAF</h1>
@@ -90,6 +89,26 @@
         <em>(tanda tangan)</em><br>
         <strong>BlueNavy</strong>
     </div>
+
+    <script>
+        const audio = document.getElementById('music');
+        const btn = document.getElementById('playPauseBtn');
+
+        btn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                btn.textContent = 'Pause Musik';
+            } else {
+                audio.pause();
+                btn.textContent = 'Play Musik';
+            }
+        });
+
+        // Ganti tombol balik ke "Play" kalo musik selesai
+        audio.addEventListener('ended', () => {
+            btn.textContent = 'Play Musik';
+        });
+    </script>
 
 </body>
 </html>
