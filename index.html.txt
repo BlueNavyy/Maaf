@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Proposal Permintaan Maaf</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Proposal Permintaan Maaf</h1>
+        <h2>Kepada Yth: Sdr. Wahdan di Voice</h2>
+        <p><strong>Perihal:</strong> Permohonan Maaf atas Kesalahan, Ketidaksengajaan dan Keterpaksaan</p>
+
+        <p>Saya yang bertanda tangan di bawah ini:</p>
+        <ul>
+            <li>Nama: BlueNavy</li>
+            <li>Alamat: Rumah Amay</li>
+            <li>Nomor Kontak: 081234567891</li>
+        </ul>
+
+        <p>
+            Dengan segala kerendahan hati, saya ingin menyampaikan permohonan maaf yang sebesar-besarnya kepada
+            Sdr. Wahdan atas sikap, perkataan, atau tindakan saya yang telah menyinggung dan menyakiti perasaan, 
+            hingga membuat Sdr. Wahdan menangis.
+        </p>
+
+        <p>
+            Saya benar-benar menyesal atas apa yang telah terjadi. Tidak ada niat sedikit pun dari saya untuk 
+            melukai hati atau membuat Sdr. Wahdan merasa sedih. Saya sungguh berharap dapat diberi kesempatan untuk 
+            memperbaiki kesalahan ini.
+        </p>
+
+        <p>
+            Saya sadar bahwa permintaan maaf saja mungkin tidak cukup, tapi saya ingin menunjukkan itikad baik saya 
+            secara terbuka.
+        </p>
+
+        <p>Hormat saya,<br>BlueNavy</p>
+
+        <button id="maafkanBtn">Saya Memaafkan 💙</button>
+
+        <audio autoplay loop>
+            <source src="Raissa Anggiani - Jika Nanti.mp3" type="audio/mpeg">
+            
+        </audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
