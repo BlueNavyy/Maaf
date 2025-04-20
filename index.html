@@ -40,7 +40,7 @@
             background-color: #c2185b;
         }
         audio {
-            display: none; /* sembunyikan player */
+            display: none !important;
         }
     </style>
 </head>
@@ -91,24 +91,25 @@
     </div>
 
     <script>
-        const audio = document.getElementById('music');
-        const btn = document.getElementById('playPauseBtn');
+        <audio id="music" loop>
+    <source src="Raissa-Anggiani-Jika-Nanti.mp3" type="audio/mpeg">
+</audio>
+<button class="play-btn" id="toggleBtn">Play Musik</button>
 
-        btn.addEventListener('click', () => {
-            if (audio.paused) {
-                audio.play();
-                btn.textContent = 'Pause Musik';
-            } else {
-                audio.pause();
-                btn.textContent = 'Play Musik';
-            }
-        });
+<script>
+    const music = document.getElementById('music');
+    const toggleBtn = document.getElementById('toggleBtn');
 
-        // Ganti tombol balik ke "Play" kalo musik selesai
-        audio.addEventListener('ended', () => {
-            btn.textContent = 'Play Musik';
-        });
-    </script>
+    toggleBtn.addEventListener('click', () => {
+        if (music.paused) {
+            music.play();
+            toggleBtn.textContent = 'Pause Musik';
+        } else {
+            music.pause();
+            toggleBtn.textContent = 'Play Musik';
+        }
+    });
+</script>
 
 </body>
 </html>
