@@ -46,13 +46,26 @@
 </head>
 <body>
 
-    <!-- Audio + Toggle Button -->
-    <div class="audio-container">
-        <audio id="music">
-            <source src="Raissa-Anggiani-Jika-Nanti.mp3" type="audio/mpeg">
-        </audio>
-        <button class="play-btn" id="playPauseBtn">Play Musik</button>
-    </div>
+    <audio id="music" loop>
+    <source src="Raissa-Anggiani-Jika-Nanti.mp3" type="audio/mpeg">
+</audio>
+<button class="play-btn" id="toggleBtn">Play Musik</button>
+
+<script>
+    const music = document.getElementById('music');
+    const toggleBtn = document.getElementById('toggleBtn');
+
+    toggleBtn.addEventListener('click', () => {
+        if (music.paused) {
+            music.play();
+            toggleBtn.textContent = 'Pause Musik';
+        } else {
+            music.pause();
+            toggleBtn.textContent = 'Play Musik';
+        }
+    });
+</script>
+
 
     <h1>PROPOSAL PERMOHONAN MAAF</h1>
 
@@ -91,25 +104,24 @@
     </div>
 
     <script>
-        <audio id="music" loop>
-    <source src="Raissa-Anggiani-Jika-Nanti.mp3" type="audio/mpeg">
-</audio>
-<button class="play-btn" id="toggleBtn">Play Musik</button>
+        const audio = document.getElementById('music');
+        const btn = document.getElementById('playPauseBtn');
 
-<script>
-    const music = document.getElementById('music');
-    const toggleBtn = document.getElementById('toggleBtn');
+        btn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                btn.textContent = 'Pause Musik';
+            } else {
+                audio.pause();
+                btn.textContent = 'Play Musik';
+            }
+        });
 
-    toggleBtn.addEventListener('click', () => {
-        if (music.paused) {
-            music.play();
-            toggleBtn.textContent = 'Pause Musik';
-        } else {
-            music.pause();
-            toggleBtn.textContent = 'Play Musik';
-        }
-    });
-</script>
+        // Ganti tombol balik ke "Play" kalo musik selesai
+        audio.addEventListener('ended', () => {
+            btn.textContent = 'Play Musik';
+        });
+    </script>
 
 </body>
 </html>
